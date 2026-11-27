@@ -10,6 +10,7 @@ module.exports = async (req, res) => {
   b = b || {};
   if (b.nettside) return res.status(200).json({ ok: true }); // skjult felt som bare roboter fyller ut
   const adr = String(b.epost || '').trim().toLowerCase();
+  const sprak = b.sprak === 'en' ? 'en' : 'nb';
   if (adr.length > 200 || !/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(adr)) return res.status(400).json({ feil: 'Det ser ikke ut som en e-postadresse.' });
 
   try {
@@ -26,7 +27,8 @@ module.exports = async (req, res) => {
       if (sub) {
         // Allerede påmeldt: send lenka på nytt, men ikke oftere enn hvert tiende minutt.
         if (naa - Number(sub.lenke || 0) > 10 * 60 * 1000) {
-          await send(adr, Math.max(1, Number(sub.opp) || 1), base, finnes, true);
+          await db([['HSET', nokkel.sub(finnes), 'sprak', sprak]]);
+          await send(adr, Math.max(2, Number(sub.opp) || 2), base, finnes, true, sprak);
           await db([['HSET', nokkel.sub(finnes), 'lenke', String(naa)]]);
         }
         return res.status(200).json({ ok: true });
@@ -34,11 +36,11 @@ module.exports = async (req, res) => {
     }
     const token = nyttToken();
     await db([
-      ['HSET', nokkel.sub(token), 'epost', adr, 'opp', '1', 'start', new Date(naa).toISOString(), 'sist', '', 'bekreftet', '0', 'side', base, 'lenke', String(naa)],
+      ['HSET', nokkel.sub(token), 'epost', adr, 'opp', '2', 'start', new Date(naa).toISOString(), 'sist', '', 'bekreftet', '0', 'side', base, 'lenke', String(naa), 'sprak', sprak],
       ['SET', nokkel.epost(adr), token],
       ['SADD', nokkel.alle, token],
     ]);
-    try { await send(adr, 1, base, token, true); }
+    try { await send(adr, 2, base, token, true, sprak); }
     catch (x) {
       await db([['DEL', nokkel.sub(token)], ['DEL', nokkel.epost(adr)], ['SREM', nokkel.alle, token]]);
       console.error('meld-paa: sending feilet', x.message);

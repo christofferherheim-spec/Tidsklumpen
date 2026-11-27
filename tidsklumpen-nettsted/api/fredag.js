@@ -24,7 +24,7 @@ module.exports = async (req, res) => {
         if (sub.bekreftet !== '1' || opp >= EPISODER.length || sub.sist === dag || forNy) { r.hoppet_over++; continue; }
         if (Date.now() - startet > BUDSJETT_MS) { r.gjenstaar++; continue; }
         try {
-          await send(sub.epost, opp + 1, process.env.SIDE_URL || sub.side || 'https://tidsklumpen.no', t, false);
+          await send(sub.epost, opp + 1, process.env.SIDE_URL || sub.side || 'https://tidsklumpen.no', t, false, sub.sprak);
           await db([['HSET', nokkel.sub(t), 'opp', String(opp + 1), 'sist', dag]]);
           r.sendt++;
         } catch (x) { r.feilet++; console.error('fredag: sending feilet', x.message); }

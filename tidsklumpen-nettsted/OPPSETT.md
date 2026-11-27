@@ -28,3 +28,9 @@ Alt i denne mappa skal ligge i roten av GitHub-repoet:
 - Fredagsjobben kan kjøres for hånd fra Vercel (Cron Jobs, Run) hvis du vil teste.
 - Nye episoder: bytt ut `index.html` og `api/_lib/episoder.json`. Begge lages av byggeskriptet.
 - I forhåndsvisningen på claude.ai er alle reisene åpne. Låsen gjelder bare på tidsklumpen.no og vercel.app.
+
+## Oversikt over påmeldte
+
+- Legg inn miljøvariabelen `OVERSIKT_NOKKEL` i Vercel: en lang, tilfeldig tekst (minst 12 tegn) du finner på selv. Velg Config, så du kan se den igjen.
+- Åpne `https://www.tidsklumpen.no/api/oversikt?n=` etterfulgt av nøkkelen. Lagre lenka som bokmerke og ikke del den.
+- Uten riktig nøkkel svarer siden at den ikke finnes.

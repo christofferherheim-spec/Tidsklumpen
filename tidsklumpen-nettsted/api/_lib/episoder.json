@@ -2,10 +2,16 @@
  {
   "n": 1,
   "tittel": "Matboksen",
-  "naar": "66 millioner år siden",
+  "naar": "Dinosaurene, for 66 millioner år siden",
   "bom": "66 millioner år",
-  "oppdrag": "Få Pip løs fra harpiksen før stjerna på himmelen treffer.",
-  "ting": "Fjær i harpiks"
+  "oppdrag": "Redd Pip fra en T. rex. Du har en rull teip.",
+  "ting": "Pips fjær",
+  "en": {
+   "tittel": "The Lunchbox",
+   "naar": "The dinosaurs, 66 million years ago",
+   "bom": "66 million years",
+   "oppdrag": "Save Pip from a T. rex. You have one roll of tape."
+  }
  },
  {
   "n": 2,
@@ -13,78 +19,138 @@
   "naar": "Istiden, for 16 000 år siden",
   "bom": "16 000 år",
   "oppdrag": "Hjelp Aya og hunden Tuk å holde huleløven ute av hula.",
-  "ting": "Synål av bein"
+  "ting": "Synål av bein",
+  "en": {
+   "tittel": "One Hour in a Jumper",
+   "naar": "The Ice Age, 16,000 years ago",
+   "bom": "16,000 years",
+   "oppdrag": "Help Aya and her dog Tuk keep the cave lion out of the cave."
+  }
  },
  {
   "n": 3,
   "tittel": "Sjøsyk i år 793",
-  "naar": "Nordsjøen, år 793",
+  "naar": "Vikingtiden, år 793",
   "bom": "1233 år",
   "oppdrag": "Hjelp skipsgutten Ravn å tette lekkasjen før langskipet synker.",
-  "ting": "Sølvmynt fra Bagdad"
+  "ting": "Sølvmynt fra Bagdad",
+  "en": {
+   "tittel": "Seasick in the Year 793",
+   "naar": "The Viking Age, year 793",
+   "bom": "1,233 years",
+   "oppdrag": "Help the ship's boy Ravn plug the leak before the longship sinks."
+  }
  },
  {
   "n": 4,
   "tittel": "Brødet i ovnen",
-  "naar": "Pompeii, år 79",
+  "naar": "Vulkanen i Pompeii, år 79",
   "bom": "1947 år",
   "oppdrag": "Hjelp Secunda å få den sta bakerfaren ut av byen før takene raser.",
-  "ting": "Brød fra Pompeii"
+  "ting": "Brød fra Pompeii",
+  "en": {
+   "tittel": "The Bread in the Oven",
+   "naar": "The volcano at Pompeii, year 79",
+   "bom": "1,947 years",
+   "oppdrag": "Help Secunda get her stubborn baker father out of town before the roofs come down."
+  }
  },
  {
   "n": 5,
   "tittel": "Vann på sanden",
-  "naar": "Egypt, 2500 f.Kr.",
+  "naar": "Pyramidene bygges, for 4500 år siden",
   "bom": "omtrent 4500 år",
   "oppdrag": "Hjelp vannbæreren Nefer å få steinen vekk, så arbeidslaget kommer seg ut.",
-  "ting": "Kobbermeisel"
+  "ting": "Kobbermeisel",
+  "en": {
+   "tittel": "Water on the Sand",
+   "naar": "Building the pyramids, 4,500 years ago",
+   "bom": "about 4,500 years",
+   "oppdrag": "Help the water carrier Nefer get the stone out of the way, so the work team can get out."
+  }
  },
  {
   "n": 6,
   "tittel": "Krittet",
-  "naar": "Los Alamos, USA, 1945",
+  "naar": "Atombomben blir oppfunnet, 1945",
   "bom": "81 år",
   "oppdrag": "Hjelp mannen med hatten å stoppe spionen før han slipper ut porten med verdens farligste regnestykke.",
-  "ting": "Krittet fra tavla"
+  "ting": "Krittet fra tavla",
+  "en": {
+   "tittel": "The Chalk",
+   "naar": "The atomic bomb is invented, 1945",
+   "bom": "81 years",
+   "oppdrag": "Help the man with the hat stop the spy before he gets out of the gate with the most dangerous sum in the world."
+  }
  },
  {
   "n": 7,
   "tittel": "Nei",
-  "naar": "Oslo, 14. oktober 1942",
+  "naar": "Krigen i Norge, 1942",
   "bom": "riktig dato, 84 år feil",
   "oppdrag": "Hjelp Solveig å gjemme radioen før soldatene finner den.",
-  "ting": "Binders fra en jakkekrage"
+  "ting": "Binders fra en jakkekrage",
+  "en": {
+   "tittel": "No",
+   "naar": "The war in Norway, 1942",
+   "bom": "84 years (right date)",
+   "oppdrag": "Help Solveig hide the radio before the soldiers find it."
+  }
  },
  {
   "n": 8,
   "tittel": "Nøkkelen",
-  "naar": "Berlin, april 1945",
+  "naar": "Krigen slutter i Berlin, 1945",
   "bom": "81 år",
   "oppdrag": "Hjelp postbudet Werner å slippe unna dem som henter gutter til krigen.",
-  "ting": "Werners husnøkkel"
+  "ting": "Werners husnøkkel",
+  "en": {
+   "tittel": "The Key",
+   "naar": "The war ends in Berlin, 1945",
+   "bom": "81 years",
+   "oppdrag": "Help the post boy Werner get away from the men who are taking boys to the war."
+  }
  },
  {
   "n": 9,
   "tittel": "Hengekøya",
-  "naar": "Guanahani, 12. oktober 1492",
+  "naar": "Columbus kommer til Amerika, 1492",
   "bom": "534 år",
   "oppdrag": "Få Tidsklumpen av sandbanken før tidevannet tar den, og før de fremmede i robåtene finner den.",
-  "ting": "Yaris hengekøye"
+  "ting": "Yaris hengekøye",
+  "en": {
+   "tittel": "The Hammock",
+   "naar": "Columbus reaches America, 1492",
+   "bom": "534 years",
+   "oppdrag": "Get the Time Lump off the sandbank before the tide takes it, and before the strangers in the rowing boats find it."
+  }
  },
  {
   "n": 10,
   "tittel": "Er det ham?",
-  "naar": "Kappstaden, 11. februar 1990",
+  "naar": "Nelson Mandela blir fri, 1990",
   "bom": "36 år",
   "oppdrag": "Hjelp Themba å få se mannen hele torget venter på, uten at noen blir most.",
-  "ting": "Bestefars passbok"
+  "ting": "Bestefars passbok",
+  "en": {
+   "tittel": "Is That Him?",
+   "naar": "Nelson Mandela walks free, 1990",
+   "bom": "36 years",
+   "oppdrag": "Help Themba get to see the man the whole square is waiting for, without anyone getting squashed."
+  }
  },
  {
   "n": 11,
   "tittel": "Jukselappen",
-  "naar": "Houston, 20. juli 1969",
+  "naar": "Månelandingen, 1969",
   "bom": "57 år",
   "oppdrag": "Hjelp Jack å finne lappen sin før datamaskinen stopper månelandingen.",
-  "ting": "Lappen «1202 = GO»"
+  "ting": "Lappen «1202 = GO»",
+  "en": {
+   "tittel": "The Cheat Sheet",
+   "naar": "The Moon landing, 1969",
+   "bom": "57 years",
+   "oppdrag": "Help Jack find his note before the computer stops the Moon landing."
+  }
  }
 ]
