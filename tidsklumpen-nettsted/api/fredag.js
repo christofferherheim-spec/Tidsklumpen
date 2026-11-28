@@ -1,5 +1,6 @@
 // GET /api/fredag  (kjøres av Vercel hver fredag, se vercel.json)
-// Låser opp neste reise for alle som har bekreftet adressen, og sender e-posten.
+// Fredag: låser opp neste reise for alle påmeldte og sender e-posten.
+// Kjøres den en annen dag (Run i Vercel), sendes reise 2 bare til dem som fortsatt står på reise 1. Ingen får noe to ganger.
 const { EPISODER, db, somObjekt, nokkel, iDagOslo, send } = require('./_lib/felles');
 
 const PAUSE_MS = Number(process.env.SEND_PAUSE_MS || 550); // holder oss under Resends grense per sekund
@@ -10,6 +11,7 @@ module.exports = async (req, res) => {
   const hemmelig = process.env.CRON_SECRET;
   if (!hemmelig || req.headers.authorization !== 'Bearer ' + hemmelig) return res.status(401).json({ feil: 'Ikke tillatt.' });
   const startet = Date.now(), dag = iDagOslo(), r = { dag, sendt: 0, hoppet_over: 0, feilet: 0, gjenstaar: 0 };
+  const erFredag = new Date(dag + 'T12:00:00Z').getUTCDay() === 5;
   try {
     const [tokens] = await db([['SMEMBERS', nokkel.alle]]);
     const liste = tokens || [];
@@ -21,7 +23,7 @@ module.exports = async (req, res) => {
         if (!sub) { await db([['SREM', nokkel.alle, t]]); continue; }
         const opp = Number(sub.opp) || 1;
         const forNy = Date.now() - Date.parse(sub.start || 0) < 24 * 3600 * 1000;
-        if (sub.bekreftet !== '1' || opp >= EPISODER.length || sub.sist === dag || forNy) { r.hoppet_over++; continue; }
+        if (opp >= EPISODER.length || sub.sist === dag || (erFredag ? forNy : opp > 1)) { r.hoppet_over++; continue; }
         if (Date.now() - startet > BUDSJETT_MS) { r.gjenstaar++; continue; }
         try {
           await send(sub.epost, opp + 1, process.env.SIDE_URL || sub.side || 'https://tidsklumpen.no', t, false, sub.sprak);
